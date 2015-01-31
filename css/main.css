@@ -1,0 +1,63 @@
+body {
+    border-bottom: 1px solid #e5e5e5;
+    border-left: 1px solid #e5e5e5;
+    border-right: 1px solid #e5e5e5;
+    font-family: "Open Sans",sans-serif,Helvetica;
+    margin: 0 auto;
+    min-height: 450px;
+    padding: 20px 0;
+    position: relative;
+    width: 960px;
+}
+input {
+    background: none repeat scroll 0 0 #e5e5e5;
+    border: medium none;
+    border-radius: 2px;
+    padding: 5px;
+    text-align: center;
+}
+.body-header{
+	text-align: center;
+	font-weight:700;
+	margin-bottom: 20px;
+}
+.query-holder, .selection-holder{
+	margin:0 auto;
+	text-align: center;
+}
+.weather-holder, .selection-holder{
+    margin-top: 20px;
+    text-align: center;
+}
+.day-weather {
+    background: none repeat scroll 0 0 #e5e5e5;
+    float: left;
+    margin-right: 10px;
+    padding: 5px;
+    width: 85px;
+}
+.day-weather .date {
+    font-size: 10px;
+    margin-bottom: 5px;
+}
+.day-weather .icon {
+    margin-bottom: 5px;
+}
+.center-wrapper {
+    margin: auto;
+    width: 940px;
+}
+.day-weather:last-child {
+    margin-right: 0;
+}
+.information {
+    bottom: 10px;
+    color: #666;
+    font-size: 10px;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+}
+.detailed{
+	display: none;
+}

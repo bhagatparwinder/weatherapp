@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="">
+<html lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +8,10 @@
 
 		<!-- Bootstrap CSS -->
 		<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Google Fonts: Open Sans -->
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'>
+		<!-- Custom CSS -->
+		<link href="css/main.css" rel="stylesheet">
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -17,6 +21,22 @@
 		<![endif]-->
 	</head>
 	<body>
+		<p class="body-header">Weather for your vacation!</p>
+		<div class="filter-holder">
+			<div class="query-holder">
+				<input type ="text" class="user-city-input" />
+				<input type="button" class="fetch-weather-trigger" value="Go" />
+			</div>
+			<div class="selection-holder">
+				<input type="button" class="fetch-summary-trigger" value="Summary" />
+				<input type="button" class="fetch-detailed-trigger" value="Detailed" />
+			</div>
+		</div>
+		<div class="weather-holder">
+			<div class="center-wrapper">
+			</div>
+		</div>
+		<div class="information">Playing around with <a target="_blank" href="http://backbonejs.org/">Backbone</a> and <a target="_blank" href="http://openweathermap.org/">OpenWeatherMap API</a></div>
 		<!-- jQuery -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 		<!-- Backbone JS -->
@@ -26,5 +46,21 @@
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<!-- Custom JS -->
 		<script src="js/app.js"></script>
+		<!-- BEGIN: Underscore Template Definition. -->
+		<script type="text/template" class="weatherTemplate">
+		<% _.each(rc, function(weatherItem){ %>
+			<% var currentDate = (new Date(weatherItem.dt * 1000)) %>
+			<div class="day-weather">
+                <div class="date"><%- parseInt(currentDate.getMonth()) + 1  + '/' + currentDate.getDate() + '/' + currentDate.getFullYear() %></div>
+                <div class="detailed humidity"><%- weatherItem.weather[0].main %></div>
+				<div class="icon"><img src="http://openweathermap.org/img/w/<%- weatherItem.weather[0].icon %>.png"></div>
+				<div class="high"><%- weatherItem.temp.max %>&deg F</div>
+				<div class="low"><%- weatherItem.temp.min %>&deg F</div>
+				<div class="detailed humidity"><%- weatherItem.humidity %></div>
+				<div class="detailed pressure"><%- weatherItem.pressure %></div>
+				<div class="detailed windspeed"><%- weatherItem.speed %></div>
+			</div>
+		<% }); %>
+		</script>
 	</body>
 </html>
