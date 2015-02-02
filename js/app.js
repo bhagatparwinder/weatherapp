@@ -17,7 +17,10 @@ var WeatherView = Backbone.View.extend({
         var template = _.template(
             $(".weatherTemplate").html()
         );
-        var weatherData = this.model.get("list");
+        var weatherData = {};
+        weatherData.list = this.model.get("list");
+        weatherData.cod = this.model.get("cod");
+        weatherData.city = this.model.get("city");
         $(".center-wrapper").empty().append(
             template(weatherData)
         );

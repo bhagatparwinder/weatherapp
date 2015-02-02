@@ -1,11 +1,8 @@
 /*Global styles*/
 body {
-    border-bottom: 1px solid #e5e5e5;
-    border-left: 1px solid #e5e5e5;
-    border-right: 1px solid #e5e5e5;
     font-family: "Open Sans",sans-serif,Helvetica;
     margin: 0 auto;
-    min-height: 450px;
+    min-height: 500px;
     padding: 20px 0;
     position: relative;
     width: 1160px;
@@ -40,6 +37,21 @@ input {
     text-align: center;
 }
 /*Actual weather display*/
+.content-container {
+    border: 1px solid #e6e6e6;
+    margin-bottom: 30px;
+    min-height: 500px;
+    padding-top: 15px;
+    position: relative;
+}
+.city-message {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+.error-message {
+    color: red;
+    font-weight: bold;
+}
 .day-weather {
     background: none repeat scroll 0 0 #e5e5e5;
     float: left;
@@ -80,8 +92,8 @@ input {
 .information {
     bottom: 10px;
     color: #666;
+    position:absolute;
     font-size: 10px;
-    position: absolute;
     text-align: center;
     width: 100%;
 }
