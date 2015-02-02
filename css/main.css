@@ -25,7 +25,8 @@ input {
 	margin:0 auto;
 	text-align: center;
 }
-.weather-holder, .selection-holder{
+.weather-holder, .selection-holder {
+    margin-bottom: 20px;
     margin-top: 20px;
     text-align: center;
 }
@@ -60,4 +61,8 @@ input {
 }
 .detailed{
 	display: none;
+}
+.active{
+	color:white;
+	background:#666;
 }

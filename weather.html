@@ -24,12 +24,8 @@
 		<p class="body-header">Weather for your vacation!</p>
 		<div class="filter-holder">
 			<div class="query-holder">
-				<input type ="text" class="user-city-input" />
+				<input type ="text" placeholder="Please enter a city" class="user-city-input" />
 				<input type="button" class="fetch-weather-trigger" value="Go" />
-			</div>
-			<div class="selection-holder">
-				<input type="button" class="fetch-summary-trigger" value="Summary" />
-				<input type="button" class="fetch-detailed-trigger" value="Detailed" />
 			</div>
 		</div>
 		<div class="weather-holder">
@@ -46,8 +42,17 @@
 		<script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 		<!-- Custom JS -->
 		<script src="js/app.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$('.user-city-input').val('').focus();
+			});
+		</script>
 		<!-- BEGIN: Underscore Template Definition. -->
 		<script type="text/template" class="weatherTemplate">
+		<div class="selection-holder">
+			<input type="button" class="fetch-summary-trigger" value="Summary" />
+			<input type="button" class="fetch-detailed-trigger" value="Detailed" />
+		</div>
 		<% _.each(rc, function(weatherItem){ %>
 			<% var currentDate = (new Date(weatherItem.dt * 1000)) %>
 			<div class="day-weather">
