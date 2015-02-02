@@ -2,6 +2,7 @@ var Weather = Backbone.Model.extend({
     url: 'http://api.openweathermap.org/data/2.5/forecast/daily'
 });
 
+//Render weather results
 var WeatherView = Backbone.View.extend({
     el: '.query-holder',
     initialize: function(options) {
@@ -43,6 +44,7 @@ var WeatherView = Backbone.View.extend({
     }
 });
 
+//Allow switching between summary and detailed view
 var DetailedWeatherView = Backbone.View.extend({
     el: '.weather-holder',
     events: {
